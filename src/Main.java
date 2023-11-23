@@ -1,20 +1,49 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Addressbook a1 = new Addressbook("Book1");
-        Person p1 = new Person("Arpit","Sahu","12388218",546,"Associate");
-        a1.contactList.add(p1);
-        System.out.println(a1.contactList);
+        //creating an instance of AddressBook
+        AddressBook a1 = new AddressBook("Book1");
+        Scanner sc = new Scanner(System.in);
 
+        //Menu based programming
+        int choice = 1;
+        do {
+            System.out.println("Welcome to AddressBook");
+            System.out.println("Press \n 1:Adding A contact\n 2: Displaying All Contact");
+
+            int input = sc.nextInt();
+
+            switch (input) {
+                //adding the contact in The current address book instance using addContact method
+                case 1 -> AddContact(a1);
+                //printing the current address book contact list
+                case 2 -> System.out.println(a1.contactList);
+                default -> System.out.println("Enter valid option");
+            }
+            System.out.println("Enter 0 to exit");
+            choice=sc.nextInt();
+        }while (choice!=0);
+
+
+    }
+
+    private static void AddContact(AddressBook a) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first name");
+        String fname = sc.next();
+        System.out.println("Enter last name");
+        String lname = sc.next();
+        System.out.println("Enter Phone number");
+        String phoneNumber = sc.next();
+        System.out.println("Enter ZipCode");
+        int zip = sc.nextInt();
+        System.out.println("Enter Relation");
+        String relation = sc.next();
+        //person constructor
+        Person p1 = new Person(fname,lname,phoneNumber,zip,relation);
+        //added to the address book instance
+        a.contactList.add(p1);
     }
 }
 
-class Addressbook{
-    String Name;
-     ArrayList <Person> contactList = new ArrayList<>();
-
-    Addressbook(String name){
-        this.Name =name;
-    }
-}
