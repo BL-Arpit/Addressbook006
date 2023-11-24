@@ -10,7 +10,7 @@ public class Main {
         int choice = 1;
         do {
             System.out.println("Welcome to AddressBook");
-            System.out.println("Press \n1:Adding A contact\n2: Displaying All Contact\n3: Search by first name\n4: Search by Phone number");
+            System.out.println("Press \n1:Adding A contact\n2: Displaying All Contact\n3: Search by first name\n4: Search by Phone number\n5: Delete by USer First name");
 
             CrudOperation c1 = new CrudOperation();
             int input = sc.nextInt();
@@ -22,14 +22,19 @@ public class Main {
                 case 2 -> System.out.println(a1.contactList);
                 //Searching a name in the addressbook
                 case 3 -> {
-                    System.out.println("Ebter the name you want to search");
+                    System.out.println("Enter the name you want to search");
                     String s1 = sc.next();
                     c1.searchByFirstName(a1,s1);
                 }
                 case 4 -> {
-                    System.out.println("Ebter the Phone Number you want to search");
+                    System.out.println("Enter the Phone Number you want to search");
                     String s1 = sc.next();
                     c1.searchByPhoneNumber(a1,s1);
+                }
+                case 5 -> {
+                    System.out.println("Enter the Name you want to delete");
+                    String s1 = sc.next();
+                    c1.deleteContactByfName(a1,s1);
                 }
                 default -> System.out.println("Enter valid option");
             }
