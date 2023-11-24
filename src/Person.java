@@ -12,9 +12,6 @@ class Person {
         this.zipCode = zipCode;
         this.relationship = Relationship.fromString(relation);
     }
-//    public static Person createPerson(String fname, String lname, String phnNo, int zipCode, String relation) {
-//        return new Person(fname, lname, phnNo, zipCode, relation);
-//    }
 
     @Override
     public String toString() {
@@ -25,6 +22,30 @@ class Person {
                 ", zipCode=" + zipCode +
                 ", relation=" + relationship +
                 '}';
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public String getPhnNo() {
+        return phnNo;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    public String getRelation() {
+        return relation;
+    }
+
+    public Relationship getRelationship() {
+        return relationship;
     }
 }
 enum Relationship {
