@@ -44,6 +44,30 @@ class Person {
         return relation;
     }
 
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public void setPhnNo(String phnNo) {
+        this.phnNo = phnNo;
+    }
+
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public void setRelation(String relation) {
+        this.relation = relation;
+    }
+
+    public void setRelationship(Relationship relationship) {
+        this.relationship = relationship;
+    }
+
     public Relationship getRelationship() {
         return relationship;
     }

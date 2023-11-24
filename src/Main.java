@@ -5,12 +5,13 @@ public class Main {
         //creating an instance of AddressBook
         AddressBook a1 = new AddressBook("Book1");
         Scanner sc = new Scanner(System.in);
+        String menu = "Press \n1:Adding A contact\n2: Displaying All Contact\n3: Search by first name\n4: Search by Phone number\n5: Delete by USer First name\n6: Update phone Number";
 
         //Menu based programming
         int choice = 1;
         do {
             System.out.println("Welcome to AddressBook");
-            System.out.println("Press \n1:Adding A contact\n2: Displaying All Contact\n3: Search by first name\n4: Search by Phone number\n5: Delete by USer First name");
+            System.out.println(menu);
 
             CrudOperation c1 = new CrudOperation();
             int input = sc.nextInt();
@@ -35,6 +36,11 @@ public class Main {
                     System.out.println("Enter the Name you want to delete");
                     String s1 = sc.next();
                     c1.deleteContactByfName(a1,s1);
+                }
+                case 6 -> {
+                    System.out.println("Enter the Name you want to update the phone number");
+                    String s1 = sc.next();
+                    c1.updatePhoneNumberByName(a1,s1);
                 }
                 default -> System.out.println("Enter valid option");
             }

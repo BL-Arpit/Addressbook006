@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 public class CrudOperation {
+    Scanner sc = new Scanner(System.in);
     void AddContact(AddressBook a) {
-        Scanner sc = new Scanner(System.in);
+
         System.out.println("Enter first name");
         String fname = sc.next();
         System.out.println("Enter last name");
@@ -56,6 +57,18 @@ public class CrudOperation {
         }
         if(!flag){
             System.out.println("User not found so nothing is deleted");
+        }
+    }
+
+    void updatePhoneNumberByName(AddressBook a, String a1){
+        boolean flag = false;
+        for (Person p : a.contactList){
+            if(p.getFname().equalsIgnoreCase(a1)){
+                System.out.println("Enter your new phone Number");
+                String ph = sc.next();
+                p.setPhnNo(ph);
+                System.out.println("Phone Number is updated");
+            }
         }
     }
 }
