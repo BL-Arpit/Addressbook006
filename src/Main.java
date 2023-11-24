@@ -40,7 +40,7 @@ public class Main {
         int zip = sc.nextInt();
         System.out.println("Enter Relation");
         String relation = sc.next();
-        //person constructor
+        //Person.java constructor
         Person p1 = new Person(fname,lname,phoneNumber,zip,relation);
         //added to the address book instance
         a.contactList.add(p1);
