@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ArrayList <AddressBook> aList = new ArrayList<>();
 
-        //creating an instance of AddressBook
+        //creating multiple instance of AddressBook
         AddressBook a = new AddressBook("Book1");
         AddressBook b = new AddressBook("Book2");
         AddressBook c = new AddressBook("Book3");
