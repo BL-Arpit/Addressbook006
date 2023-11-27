@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         String menu = "Press \n1:Adding A contact\n2: Displaying All Contact\n3: Search by first name\n4: Search by Phone number\n5: Delete by USer First name\n6: Update phone Number";
         Scanner sc = new Scanner(System.in);
-        ArrayList <AddressBook> aList = new ArrayList<>();
+        ArrayList<AddressBook> aList = new ArrayList<>();
 
         //creating multiple instance of AddressBook
         AddressBook a = new AddressBook("Book1");
@@ -19,7 +19,7 @@ public class Main {
         int z = 1;
 
         do {
-            System.out.println("Enter 1 : Select Address Book\n2: Display all the address book");
+            System.out.println("1 : Select Address Book\n2: Display all the address book\n3:Find all contacts of a city");
             int inp = sc.nextInt();
             switch (inp) {
                 case 1 -> {
@@ -77,17 +77,27 @@ public class Main {
                         System.out.println(x1.Name + "  : " + x1.contactList);
                     }
                 }
+
+                case 3 -> {
+                    System.out.println("Enter the city you want to display");
+                    String city = sc.next();
+                    for (AddressBook x1 : aList){
+                        for (Person p : x1.contactList){
+                            if(city.equalsIgnoreCase(p.getCity())){
+                                System.out.println(x1.Name+ " : "+p);
+                            }
+                        }
+                    }
+                }
                 default -> z = 0;
             }
 
-        }while(z!=0);
-
-
+        } while (z != 0);
 
 
     }
 
-    }
+}
 
 
 

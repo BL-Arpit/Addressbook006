@@ -12,10 +12,12 @@ public class CrudOperation {
         String phoneNumber = sc.next();
         System.out.println("Enter ZipCode");
         int zip = sc.nextInt();
+        System.out.println("Enter City");
+        String city = sc.next();
         System.out.println("Enter Relation");
         String relation = sc.next();
         //Person.java constructor
-        Person p1 = new Person(fname,lname,phoneNumber,zip,relation);
+        Person p1 = new Person(fname,lname,phoneNumber,zip,city,relation);
         //added to the address book instance
         a.contactList.add(p1);
     }
